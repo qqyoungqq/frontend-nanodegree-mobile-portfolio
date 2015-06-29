@@ -24,4 +24,4 @@ For pizza.html(in views/js/main.js)
 4. Reduce the paint time by promoting moving pizza to its own layer 
 
 Note 
-The above optimization is applied to both source code and production code. But in the production code, HTML, CSS, JavaScript are minified.   
+The above optimization is applied to master branch and gh-pages branch. But in the gh-pages branch, HTML, CSS, JavaScript are minified.   
