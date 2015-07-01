@@ -438,7 +438,7 @@ var resizePizzas = function(size) {
       }
     // use document.getElementsByClassName() instead of document.querySelectorAll() to access randomPizzaContainer element
     var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
-    for (var i = 0; i < randomPizzas.length; i++) {
+    for (var i = 0,len=randomPizzas.length; i < len; i++) {
       randomPizzas[i].style.width = newWidth + "%";
     }
   }
@@ -455,8 +455,8 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads 
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -517,8 +517,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   //determine number of moving pizza based on screen size 
   var numPizza = Math.floor((window.innerHeight / s) * cols);
+  var elem;
   for (var i = 0; i < numPizza; i++) {
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza-compressor.png";
     elem.style.height = "100px";
